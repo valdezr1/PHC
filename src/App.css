@@ -33,9 +33,17 @@
     padding-left: 10%;
 }
 
+.infoFont{
+    font-size: large;
+}
+
 .gridStyle{
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.centerAvatar{
+    text-align: center;
 }
 
 .white{

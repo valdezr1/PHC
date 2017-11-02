@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {GridList, GridTile} from 'material-ui/GridList'
 import {Card, CardText} from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
-import Dialog from 'material-ui/Dialog'
+
+import OfficerDialog from './OfficerDialog/OfficerDialog'
 
 class Officers extends Component {
     constructor(){
@@ -14,6 +15,9 @@ class Officers extends Component {
             dialogOpenKey4 : false,
             dialogOpenKey5 : false,
             dialogOpenKey6 : false,
+            dialogOpenKey7 : false,
+            dialogOpenKey8 : false,
+            dialogOpenKey9 : false,
         };
 
         this.dialogToggleKey1 = this.dialogToggleKey1.bind(this);
@@ -22,6 +26,9 @@ class Officers extends Component {
         this.dialogToggleKey4 = this.dialogToggleKey4.bind(this);
         this.dialogToggleKey5 = this.dialogToggleKey5.bind(this);
         this.dialogToggleKey6 = this.dialogToggleKey6.bind(this);
+        this.dialogToggleKey7 = this.dialogToggleKey7.bind(this);
+        this.dialogToggleKey8 = this.dialogToggleKey8.bind(this);
+        this.dialogToggleKey9 = this.dialogToggleKey9.bind(this);
     }
 
     dialogToggleKey1(){
@@ -54,84 +61,118 @@ class Officers extends Component {
             dialogOpenKey6 : !this.state.dialogOpenKey6
         });
     }
+    dialogToggleKey7(){
+        this.setState({
+            dialogOpenKey7 : !this.state.dialogOpenKey7
+        });
+    }
+    dialogToggleKey8(){
+        this.setState({
+            dialogOpenKey8 : !this.state.dialogOpenKey8
+        });
+    }
+    dialogToggleKey9(){
+        this.setState({
+            dialogOpenKey9 : !this.state.dialogOpenKey9
+        });
+    }
 
     render() {
+        const officerName = [
+            "President: Nicholas Lee",
+            "OfficerName2",
+            "OfficerName3",
+            "OfficerName4",
+            "OfficerName5",
+            "OfficerName6",
+            "OfficerName7",
+            "OfficerName8",
+            "OfficerName9",
+        ]
+
+        const officerImage = [
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+            "http://seokitty.net/wp-content/uploads/2014/10/Blue_Robot.png",
+        ]
+
+        const officerBackground = [
+            "Background1",
+            "Background2",
+            "Background3",
+            "Background4",
+            "Background5",
+            "Background6",
+            "Background7",
+            "Background8",
+            "Background9",
+        ]
+
+        const officerResponsibilities = [
+            "Calling and running meetings, general organization of club tasks, and planning events.",
+            "Assisting the president, assuming the role of the president in his or her absence.",
+            "Managing club accounts and petitioning ASSP for financial resources as needed.",
+            "Keeping meeting minutes and corresponding via email with group members.",
+            "Assists in planning events, putting together materials for events, and communicating relevant club information.",
+            "Event advertisement, tracking of event size, and also communicating relevant club information.",
+            "...",
+            "...",
+            "...",
+        ]
+
         const tilesData = [
             {
                 key : 1,
-                title : <FlatButton onClick={this.dialogToggleKey1} fullWidth={true} rippleColor="blue"><span className='white'>Officer 1</span></FlatButton>,
-                img: "http://i0.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
+                title : <FlatButton onClick={this.dialogToggleKey1} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[0]}</span></FlatButton>,
+                img: officerImage[0]
             },
             {
                 key : 2,
-                title : <FlatButton onClick={this.dialogToggleKey2} fullWidth={true} rippleColor="blue"><span className='white'>Officer 2</span></FlatButton>,
-                img: "http://i0.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
+                title : <FlatButton onClick={this.dialogToggleKey2} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[1]}</span></FlatButton>,
+                img: officerImage[1]
             },
             {
                 key : 3,
-                title : <FlatButton onClick={this.dialogToggleKey3} fullWidth={true} rippleColor="blue"><span className='white'>Officer 3</span></FlatButton>,
-                img: "http://i0.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
+                title : <FlatButton onClick={this.dialogToggleKey3} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[2]}</span></FlatButton>,
+                img: officerImage[2]
             },
             {
                 key : 4,
-                title : <FlatButton onClick={this.dialogToggleKey4} fullWidth={true} rippleColor="blue"><span className='white'>Officer 4</span></FlatButton>,
-                img: "http://i0.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
+                title : <FlatButton onClick={this.dialogToggleKey4} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[3]}</span></FlatButton>,
+                img: officerImage[3]
             },
             {
                 key : 5,
-                title : <FlatButton onClick={this.dialogToggleKey5} fullWidth={true} rippleColor="blue"><span className='white'>Officer 5</span></FlatButton>,
-                img: "http://i0.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
+                title : <FlatButton onClick={this.dialogToggleKey5} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[4]}</span></FlatButton>,
+                img: officerImage[4]
             },
             {
                 key: 6,
-                title : <FlatButton onClick={this.dialogToggleKey6} fullWidth={true} rippleColor="blue"><span className='white'>Okay bye!"</span></FlatButton>,
-                img: "https://static1.squarespace.com/static/507dba43c4aabcfd2216a447/t/5244609de4b0d08691bdc2ee/1380212895097/Troll+Face.jpg"
-            }
+                title : <FlatButton onClick={this.dialogToggleKey6} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[5]}</span></FlatButton>,
+                img: officerImage[5]
+            },
+            {
+                key: 7,
+                title : <FlatButton onClick={this.dialogToggleKey7} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[6]}</span></FlatButton>,
+                img: officerImage[6]
+            },
+            {
+                key: 8,
+                title : <FlatButton onClick={this.dialogToggleKey8} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[7]}</span></FlatButton>,
+                img: officerImage[7]
+            },
+            {
+                key: 9,
+                title : <FlatButton onClick={this.dialogToggleKey9} fullWidth={true} rippleColor="blue"><span className='white'>{officerName[8]}</span></FlatButton>,
+                img: officerImage[8]
+            },
         ]
-
-        const actionsKey1 = [
-            <FlatButton
-                label = "Close"
-                primary = {true}
-                onClick={this.dialogToggleKey1}
-            />
-        ];
-        const actionsKey2 = [
-            <FlatButton
-                label = "Close"
-                primary = {true}
-                onClick={this.dialogToggleKey2}
-            />
-        ];
-         const actionsKey3 = [
-            <FlatButton
-                label = "Close"
-                primary = {true}
-                onClick={this.dialogToggleKey3}
-            />
-        ];
-         const actionsKey4 = [
-            <FlatButton
-                label = "Close"
-                primary = {true}
-                onClick={this.dialogToggleKey4}
-            />
-        ];
-         const actionsKey5 = [
-            <FlatButton
-                label = "Close"
-                primary = {true}
-                onClick={this.dialogToggleKey5}
-            />
-        ];
-         const actionsKey6 = [
-            <FlatButton
-                label = "Close"
-                primary = {true}
-                onClick={this.dialogToggleKey6}
-            />
-        ];
-
 
         return (
             <div className="gridStyle">
@@ -139,8 +180,9 @@ class Officers extends Component {
                     <CardText>
                         <GridList
                             cellHeight = {180}
+                            padding = {5}
+                            cols = {3}
                         >
-                            {/*<Subheader><br/></Subheader>*/}
                             {tilesData.map((tile) => (
                                 <GridTile
                                     key = {tile.key}
@@ -153,120 +195,80 @@ class Officers extends Component {
                     </CardText>
                 </Card>
 
-                {/*Officer 1*/}
-                <Dialog
-                    title = "OfficerName of Key:1"
-                    modal = {false}
-                    open = {this.state.dialogOpenKey1}
-                    onRequestClose={this.dialogToggleKey1}
-                    actions = {actionsKey1}
-                >
-                    OFFICER 1 SIR
-                    <hr/>
-                    <strong>Background:</strong>
-                    <br/>
-                    Background info goes here
-                    <hr/>
-                    <strong>Goals:</strong>
-                    <br/>
-                    Goals go here
-                </Dialog>
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey1}
+                    dialogOpenKey={this.state.dialogOpenKey1}
+                    officerName={officerName[0]}
+                    officerImage={officerImage[0]}
+                    officerBackground={officerBackground[0]}
+                    officerResponsibilities={officerResponsibilities[0]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey2}
+                    dialogOpenKey={this.state.dialogOpenKey2}
+                    officerName={officerName[1]}
+                    officerImage={officerImage[1]}
+                    officerBackground={officerBackground[1]}
+                    officerResponsibilities={officerResponsibilities[1]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey3}
+                    dialogOpenKey={this.state.dialogOpenKey3}
+                    officerName={officerName[2]}
+                    officerImage={officerImage[2]}
+                    officerBackground={officerBackground[2]}
+                    officerResponsibilities={officerResponsibilities[2]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey4}
+                    dialogOpenKey={this.state.dialogOpenKey4}
+                    officerName={officerName[3]}
+                    officerImage={officerImage[3]}
+                    officerBackground={officerBackground[3]}
+                    officerResponsibilities={officerResponsibilities[3]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey5}
+                    dialogOpenKey={this.state.dialogOpenKey5}
+                    officerName={officerName[4]}
+                    officerImage={officerImage[4]}
+                    officerBackground={officerBackground[4]}
+                    officerResponsibilities={officerResponsibilities[4]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey6}
+                    dialogOpenKey={this.state.dialogOpenKey6}
+                    officerName={officerName[5]}
+                    officerImage={officerImage[5]}
+                    officerBackground={officerBackground[5]}
+                    officerResponsibilities={officerResponsibilities[5]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey7}
+                    dialogOpenKey={this.state.dialogOpenKey7}
+                    officerName={officerName[6]}
+                    officerImage={officerImage[6]}
+                    officerBackground={officerBackground[6]}
+                    officerResponsibilities={officerResponsibilities[6]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey8}
+                    dialogOpenKey={this.state.dialogOpenKey8}
+                    officerName={officerName[7]}
+                    officerImage={officerImage[7]}
+                    officerBackground={officerBackground[7]}
+                    officerResponsibilities={officerResponsibilities[7]}
+                />
+                <OfficerDialog
+                    dialogToggleKey={this.dialogToggleKey9}
+                    dialogOpenKey={this.state.dialogOpenKey9}
+                    officerName={officerName[8]}
+                    officerImage={officerImage[8]}
+                    officerBackground={officerBackground[8]}
+                    officerResponsibilities={officerResponsibilities[8]}
+                />
 
-                {/*Officer 2*/}
-                <Dialog
-                    title = "OfficerName of Key:2"
-                    modal = {false}
-                    open = {this.state.dialogOpenKey2}
-                    onRequestClose={this.dialogToggleKey2}
-                    actions = {actionsKey2}
-                >
-                    OFFICER 2 READY TO SERVE
-                    <hr/>
-                    <strong>Background:</strong>
-                    <br/>
-                    Background info goes here
-                    <hr/>
-                    <strong>Goals:</strong>
-                    <br/>
-                    Goals go here
-                </Dialog>
 
-                {/*Officer 3*/}
-                <Dialog
-                    title = "OfficerName of Key:3"
-                    modal = {false}
-                    open = {this.state.dialogOpenKey3}
-                    onRequestClose={this.dialogToggleKey3}
-                    actions = {actionsKey3}
-                >
-                    OFFICER 3 SALUTE
-                    <hr/>
-                    <strong>Background:</strong>
-                    <br/>
-                    Background info goes here
-                    <hr/>
-                    <strong>Goals:</strong>
-                    <br/>
-                    Goals go here
-                </Dialog>
-
-                {/*Officer 4*/}
-                <Dialog
-                    title = "OfficerName of Key:4"
-                    modal = {false}
-                    open = {this.state.dialogOpenKey4}
-                    onRequestClose={this.dialogToggleKey4}
-                    actions = {actionsKey4}
-                >
-                    OFFICER 4 HOORAH
-                    <hr/>
-                    <strong>Background:</strong>
-                    <br/>
-                    Background info goes here
-                    <hr/>
-                    <strong>Goals:</strong>
-                    <br/>
-                    Goals go here
-                </Dialog>
-
-                {/*Officer 5*/}
-                <Dialog
-                    title = "OfficerName of Key:5"
-                    modal = {false}
-                    open = {this.state.dialogOpenKey5}
-                    onRequestClose={this.dialogToggleKey5}
-                    actions = {actionsKey5}
-                >
-                    OFFICER 5 PRESENT
-                    <hr/>
-                    <strong>Background:</strong>
-                    <br/>
-                    Background info goes here
-                    <hr/>
-                    <strong>Goals:</strong>
-                    <br/>
-                    Goals go here
-                </Dialog>
-
-                {/*Officer 6*/}
-                <Dialog
-                    title = "OfficerName of Key:6"
-                    modal = {false}
-                    open = {this.state.dialogOpenKey6}
-                    onRequestClose={this.dialogToggleKey6}
-                    actions = {actionsKey6}
-                >
-                    OFFICER 6 RESPONDING BABY!
-                    <hr/>
-                    <strong>Background:</strong>
-                    <br/>
-                    Background info goes here
-                    <hr/>
-                    <strong>Goals:</strong>
-                    <br/>
-                    Goals go here
-
-                </Dialog>
             </div>
         );
     }
