@@ -1,0 +1,51 @@
+.Home {
+    text-align: center;
+}
+
+.TentCity{
+    text-align: center;
+}
+
+.paperHeader{
+    margin-top: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    textAlign: center;
+    display: inline-block;
+}
+
+.logoStyle{
+    margin-top: 25px;
+    height: 100px;
+    width: 100px;
+}
+
+.paperTextHeader{
+    color: #B71C1C; /*red900*/
+}
+
+.paperSubHeader{
+    color: #EF5350; /*red400*/
+}
+
+.cardStyle{
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.gridStyle{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.white{
+    color: white;
+}
+
+.smallFont{
+    font-size: small;
+}
+
+.footerColor{
+    color: #EF5350; /*red400*/
+}
